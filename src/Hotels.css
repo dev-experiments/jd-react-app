@@ -1,0 +1,324 @@
+html{display: block;height:100%;}
+body{font-family: 'Roboto', sans-serif;margin:0;padding:0;border:0;outline:0;height:100%;position: relative;background:#f6f6f6; -webkit-overflow-scrolling: touch;overflow-y: scroll;}
+* {-webkit-tap-highlight-color:transparent;box-sizing: border-box;-moz-box-sizing: border-box; -ms-box-sizing: border-box;-o-box-sizing: border-box;-webkit-box-sizing: border-box; margin: 0;outline: medium none;padding: 0; text-decoration:none;}
+.dn{display:none!important;}
+.dt{display:block!important;}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #222;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #222;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #222;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #222;
+}
+
+/* New Hotel Icon.css */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('resources/font/icomoon.eot');
+  src:  url('resources/font/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('resources/font/icomoon.woff2') format('woff2'),
+    url('resources/font/icomoon.ttf') format('truetype'),
+    url('resources/font/icomoon.woff') format('woff'),
+    url('resources/font/icomoon.svg?#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jd_checked:before {
+  content: "\e900";
+  color: #26a969;
+}
+.icon-jd_dropdown_arrow:before {
+  content: "\e901";
+  color: #d4d3d3;
+}
+.icon-jd_filter:before {
+  content: "\e902";
+}
+.icon-jd_nights:before {
+  content: "\e903";
+  color: #909090;
+}
+.icon-jd_radiobutton_selected:before {
+  content: "\e904";
+  color: #56a67f;
+}
+.icon-jd_radiobutton_unselected:before {
+  content: "\e905";
+  color: #ccc;
+}
+.icon-jd_unchecked:before {
+  content: "\e906";
+  color: #ccc;
+}
+.icon-add:before {
+  content: "\f001";
+  color: #007aff;
+}
+.icon-arrow-oneway:before {
+  content: "\f002";
+}
+.icon-arrow-twoway:before {
+  content: "\f003";
+}
+.icon-back-arrow:before {
+  content: "\f004";
+  color: #fff;
+}
+.icon-baggage:before {
+  content: "\f005";
+  color: #aaa;
+}
+.icon-bus:before {
+  content: "\f006";
+  color: #999;
+}
+.icon-chair:before {
+  content: "\f007";
+  color: #aaa;
+}
+.icon-checked .path1:before {
+  content: "\f008";
+  color: rgb(86, 166, 127);
+}
+.icon-checked .path2:before {
+  content: "\f009";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-clock:before {
+  content: "\f9090";
+  color: #ccc;
+}
+.icon-close:before {
+  content: "\f010";
+  color: #ccc;
+}
+.icon-decrease:before {
+  content: "\f011";
+  color: #909090;
+}
+.icon-edit:before {
+  content: "\f012";
+  color: #aaa;
+}
+.icon-filter:before {
+  content: "\f013";
+  color: #fff;
+}
+.icon-flight:before {
+  content: "\f014";
+  color: #007aff;
+}
+.icon-flightdetails:before {
+  content: "\f015";
+  color: #4b4b4b;
+}
+.icon-hotel:before {
+  content: "\f016";
+  color: #999;
+}
+.icon-increase:before {
+  content: "\f017";
+  color: #909090;
+}
+.icon-more:before {
+  content: "\f018";
+  color: #999;
+}
+.icon-multiair:before {
+  content: "\f019";
+  color: #575757;
+}
+.icon-oneway:before {
+  content: "\f020";
+  color: #b1b9c3;
+}
+.icon-onewayheader:before {
+  content: "\f021";
+  color: #fff;
+}
+.icon-passengerarrowdown:before {
+  content: "\f022";
+  color: #4b4b4b;
+}
+.icon-passengerarrowup:before {
+  content: "\f023";
+  color: #747474;
+}
+.icon-pricesort:before {
+  content: "\f024";
+  color: #007aff;
+}
+.icon-proceed:before {
+  content: "\f025";
+  color: #fff;
+}
+.icon-rupee:before {
+  content: "\f026";
+}
+.icon-search:before {
+  content: "\f027";
+  color: #8e8e93;
+}
+.icon-train:before {
+  content: "\f028";
+  color: #999;
+}
+.icon-twoway:before {
+  content: "\f029";
+  color: #b1b9c3;
+}
+.icon-twowayheader:before {
+  content: "\f030";
+  color: #fff;
+}
+.icon-unchecked:before {
+  content: "\f031";
+  color: #ccc;
+}
+.icon-jd_alert_message:before {
+  content: "\e907";
+  color: #6ea237;
+}
+.icon-jd_email:before {
+  content: "\e908";
+  color: #999;
+}
+.icon-jd_phone:before {
+  content: "\e909";
+  color: #999;
+}
+
+.bkbg{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  background: #fff;
+}
+
+.glyph {
+  font-size: 16px;
+  width: 15em;
+  padding-bottom: 1em;
+  margin-right: 4em;
+  margin-bottom: 1em;
+  float: left;
+  overflow: hidden;
+}
+.liga {
+  width: 80%;
+  width: calc(100% - 2.5em);
+}
+.talign-right {
+  text-align: right;
+}
+.talign-center {
+  text-align: center;
+}
+.bgc1 {
+  background: #f1f1f1;
+}
+.fgc1 {
+  color: #999;
+}
+.fgc0 {
+  color: #000;
+}
+
+.mvm {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}
+.mtn {
+  margin-top: 0;
+}
+.mtl, .mal {
+  margin-top: 1.5em;
+}
+.mbl, .mal {
+  margin-bottom: 1.5em;
+}
+.mal, .mhl {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+.mhmm {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.mls {
+  margin-left: .25em;
+}
+.ptl {
+  padding-top: 1.5em;
+}
+.pbs, .pvs {
+  padding-bottom: .25em;
+}
+.pvs, .pts {
+  padding-top: .25em;
+}
+.unit {
+  float: left;
+}
+.unitRight {
+  float: right;
+}
+.size1of2 {
+  width: 50%;
+}
+.size1of1 {
+  width: 100%;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.hidden-true {
+  display: none;
+}
+.textbox0 {
+  width: 3em;
+  background: #f1f1f1;
+  padding: .25em .5em;
+  line-height: 1.5;
+  height: 1.5em;
+}
+#testDrive {
+  display: block;
+  padding-top: 24px;
+  line-height: 1.5;
+}
+.fs0 {
+  font-size: 16px;
+}
+.fs1 {
+  font-size: 32px;
+  }
