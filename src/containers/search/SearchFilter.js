@@ -19,7 +19,7 @@ class SearchFilter extends Component {
        //     search_keyUp_callback: () => { this.updateResult() }
         };
     }
-    componentWillMount(){
+    componentDidMount(){
         this.props.getPopularCitiesAction();
     }
     //getPopularCitiesAction
