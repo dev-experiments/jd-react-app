@@ -1,0 +1,44 @@
+.headersection {
+    float: left;
+    width: 100%;
+    background: #25426E;
+    padding: 0 10px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #fff;
+    position: relative;
+    vertical-align: middle;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    font-weight: 500;
+}
+.backdiv{position: absolute;left: 0;font-size: 16px;top: 50%;width: 30px;height: 24px;margin-top: -15px;padding-top: 6px;box-sizing: content-box;cursor:pointer;-webkit-tap-highlight-color: rgba(255,255,255,0.8);cursor:pointer}
+.backdiv::before{color:#fff;}
+.bcktxt {
+    line-height: 20px;
+    float: left;
+}
+.backSpan {
+    width: 10%;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    float: left;
+    -webkit-tap-highlight-color: rgba(255,255,255,.8);
+    display: block;
+    padding: 10px;
+}
+.hdrclstxt {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    font-size: 13px;
+    padding: 5px 10px;
+    margin-top: -12px;
+    cursor: pointer;
+    line-height: 13px;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.8);
+    font-weight: normal;
+    cursor: pointer;
+}

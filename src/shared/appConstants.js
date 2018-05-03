@@ -1,3 +1,3 @@
 export const API = {
-    url:''
+    baseUrl:'http://172.29.87.22:8000/'
 };

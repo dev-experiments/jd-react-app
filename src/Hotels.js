@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import MainHeader from './containers/headers/MainHeader';
-import SearchSkull from './components/search/SearchSkull';
+import AppRoutes from './AppRoutes';
 import './Hotels.css';
 
 class Hotels extends Component {
@@ -10,14 +9,9 @@ class Hotels extends Component {
   }
 
   render() {
-    let header = <MainHeader source={this.props.source}></MainHeader>;
-    let skull = <SearchSkull></SearchSkull>;
     return (
       <div>
-        {header}
-        <div className="skullContainer">
-          {skull}
-        </div>
+        {AppRoutes}
       </div>
 
     );
