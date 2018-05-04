@@ -1,9 +1,9 @@
-import { SET_CURRENT_VIEW, GET_POPULAR_CITIES, SET_CHECKIN, SET_CHECKOUT, SET_SEARCHKEY, SET_SEARCHKEY_METADATA, ADD_ROOM } from "./../actions/actionTypes";
-import SearchService from "./../../shared/services/SearchService";
+import { SET_CURRENT_VIEW, POPULAR_CITIES_INITIATED, POPULAR_CITIES_RESPONSE, POPULAR_CITIES_FAILURE} from "./../actions/actionTypes";
 
 export default search;
 export const initialState = {
     current_view: 'search_form',
+    popular_cities: [],
     checkin_date: {
         label: ''
     }, checkout_date: {
@@ -15,18 +15,12 @@ function search(state = initialState, action = {}) {
     switch (action.type) {
         case SET_CURRENT_VIEW:
             return setCurrentView(state, action.payload);
-        case GET_POPULAR_CITIES:
+        case POPULAR_CITIES_INITIATED:
             return getPopularCities(state, action.payload);
-        case SET_CHECKIN:
-            return setCheckIn(state, action.payload);
-        case SET_CHECKOUT:
-            return setCheckOut(state, action.payload);
-        case SET_SEARCHKEY:
-            return setCheckOut(state, action.payload);
-        case SET_SEARCHKEY_METADATA:
-            return setCheckOut(state, action.payload);
-        case ADD_ROOM:
-            return setCheckOut(state, action.payload);
+        case POPULAR_CITIES_RESPONSE:
+            return setPopularCities(state, action.payload);
+        case POPULAR_CITIES_FAILURE:
+            return setPopularCities(state, action.payload);
         default: return state;
     }
 }
@@ -39,14 +33,19 @@ function setCurrentView(state, payload) {
 }
 
 function getPopularCities(state, payload) {
-   const data = SearchService.getPopularCities();
-   console.log(data);
+   
     return {
-        ...state, current_view: payload
+        ...state, popular_cities: []
+    }
+}
+function setPopularCities(state, payload) {
+   
+    return {
+        ...state, popular_cities: payload.data
     }
 }
 
-function setCheckIn(state, payload) {
+/* function setCheckIn(state, payload) {
     return {
         ...state,
     }
@@ -56,4 +55,4 @@ function setCheckOut(state, payload) {
     return {
         ...state
     }
-} 
+}  */

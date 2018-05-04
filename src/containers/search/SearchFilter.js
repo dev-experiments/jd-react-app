@@ -6,12 +6,9 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from './../../store/actions/search';
 
 class SearchFilter extends Component {
-    constructor(props) {
+    /* constructor(props) {
         super(props);
-        this.state = {
-            search_result_items: this.searchResultItems()
-        };
-    }
+    } */
     searchOptions() {
         return {
             placeholder: 'Select your destination',
@@ -22,21 +19,9 @@ class SearchFilter extends Component {
     componentDidMount(){
         this.props.getPopularCitiesAction();
     }
-    //getPopularCitiesAction
+    
     searchResultItems() {
-        return [{
-            title: 'Popular Cities',
-            items: [{
-                text: 'Bangalore',
-                sub_text: 'Indiiiaa',
-                link: '',
-            },
-            {
-                text: 'mumbai',
-                sub_text: 'India',
-                link: '',
-            }]
-        }];
+        return this.props.popular_cities;
     }
     headerOptions() {
         return {
@@ -50,13 +35,14 @@ class SearchFilter extends Component {
     }
     render() {
         return (
-            <SearchPage title="Select your destination" searchResultItems={this.state.search_result_items} searchOptions={this.searchOptions()} headerOptions={this.headerOptions()} />
+            <SearchPage title="Select your destination" searchResultItems={this.props.popular_cities} searchOptions={this.searchOptions()} headerOptions={this.headerOptions()} />
         );
     }
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        current_view: state.search.current_view
+        current_view: state.search.current_view,
+        popular_cities: state.search.popular_cities
     }
 };
 
