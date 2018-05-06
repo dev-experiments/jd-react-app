@@ -1,4 +1,4 @@
-import { SET_CURRENT_VIEW, POPULAR_CITIES_INITIATED, POPULAR_CITIES_RESPONSE, POPULAR_CITIES_FAILURE} from "./../actions/actionTypes";
+import { POPULAR_CITIES_INITIATED, POPULAR_CITIES_RESPONSE, POPULAR_CITIES_FAILURE} from "./../actions/actionTypes";
 
 export default search;
 export const initialState = {
@@ -13,8 +13,6 @@ export const initialState = {
 
 function search(state = initialState, action = {}) {
     switch (action.type) {
-        case SET_CURRENT_VIEW:
-            return setCurrentView(state, action.payload);
         case POPULAR_CITIES_INITIATED:
             return getPopularCities(state, action.payload);
         case POPULAR_CITIES_RESPONSE:
@@ -22,13 +20,6 @@ function search(state = initialState, action = {}) {
         case POPULAR_CITIES_FAILURE:
             return setPopularCities(state, action.payload);
         default: return state;
-    }
-}
-
-function setCurrentView(state, payload) {
-
-    return {
-        ...state, current_view: payload
     }
 }
 

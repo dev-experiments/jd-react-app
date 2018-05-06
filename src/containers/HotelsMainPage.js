@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './HotelsMainPage.css';
 import Header from './headers/Header';
-import SearchForm from './search/SearchForm';
+import SearchMainForm from './search/SearchMainForm';
 import SearchFilter from './search/SearchFilter';
 // import SearchSkull from './components/search/SearchSkull';
 // import SearchForm from './components/search/SearchSkull';
@@ -15,7 +15,7 @@ class HotelsMainPage extends Component {
          super(props);
      } */
     render() {
-        let searchForm = <div> <Header /> <SearchForm /> </div>;
+        let searchForm = <div> <Header /> <SearchMainForm /> </div>;
         let filter = <SearchFilter title="Select your destination" />;
         let currentView = searchForm;
 

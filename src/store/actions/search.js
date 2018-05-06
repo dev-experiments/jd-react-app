@@ -1,11 +1,6 @@
-import { SET_CURRENT_VIEW, POPULAR_CITIES_INITIATED, POPULAR_CITIES_RESPONSE, POPULAR_CITIES_FAILURE} from "./../actions/actionTypes";
+import { POPULAR_CITIES_INITIATED, POPULAR_CITIES_RESPONSE, POPULAR_CITIES_FAILURE } from "./../actions/actionTypes";
 
 import SearchService from "./../../shared/services/SearchService";
-
-export const setCurrentViewAction = payload => ({
-  type: SET_CURRENT_VIEW,
-  payload
-});
 
 /* export const getPopularCitiesAction = payload => ({ 
   type: GET_POPULAR_CITIES, 
