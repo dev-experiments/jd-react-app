@@ -11,7 +11,7 @@ class Header extends Component {
     } */
     headerOptions() {
         let opt = {};
-        opt.back_callback = this.backButton;
+        opt.backCallback = this.backButton;
         return opt;
     }
     backButton() {

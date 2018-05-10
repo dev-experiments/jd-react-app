@@ -6,25 +6,35 @@ class MainHeader extends Component {
     static defaultProps = {
         title: null, // required 
         options: {
-            title_callback: () => { },
-            back_label: '',
-            back_callback: () => { },
-            rightLink_label: '',
-            rightLink_callback: () => { }
+            titleCallback: () => { },
+            backLabel: '',
+            backCallback: () => { },
+            rightLinkLabel: '',
+            rightLinkCallback: () => { }
         }
+    }
+    static propTypes = {
+        title: PropTypes.string.isRequired,
+        options: PropTypes.shape({
+            titleCallback: PropTypes.func,
+            backCallback: PropTypes.func,
+            backLabel: PropTypes.string,
+            rightLinkLabel: PropTypes.string,
+            rightLinkCallback: PropTypes.func
+        }),
     }
     /* constructor(props) {
         super(props);
     } */
    
     backButtonClickHandle() {
-        if (this.props.options.back_callback) {
-            this.props.options.back_callback();
+        if (this.props.options.backCallback) {
+            this.props.options.backCallback();
         }
     }
     titleClickHandle() {
-        if (this.props.options.title_callback) {
-            this.props.options.title_callback();
+        if (this.props.options.titleCallback) {
+            this.props.options.titleCallback();
         }
     }
     backButton(label) {
@@ -40,30 +50,19 @@ class MainHeader extends Component {
         return (label) ? <span className="hdrclstxt" onClick={(e) => { this.rightLinkClickHandle(e) }} >{label}</span> : '';
     }
     rightLinkClickHandle() {
-        if (this.props.options.rightLink_callback) {
-            this.props.options.rightLink_callback();
+        if (this.props.options.rightLinkCallback) {
+            this.props.options.rightLinkCallback();
         }
     }
     render() {
         return (
             <div className='headersection'>
-                {this.backButton(this.props.options.back_label)}
+                {this.backButton(this.props.options.backLabel)}
                 <span onClick={(e) => { this.titleClickHandle(e) }} >{this.props.title}</span>
-                {this.rightLink(this.props.options.rightLink_label)}
+                {this.rightLink(this.props.options.rightLinkLabel)}
             </div>
         );
     }
 }
-
-MainHeader.propTypes = {
-    title: PropTypes.string.isRequired,
-    options: PropTypes.shape({
-        title_callback: PropTypes.func,
-        back_callback: PropTypes.func,
-        back_label: PropTypes.string,
-        rightLink_label: PropTypes.string,
-        rightLink_callback: PropTypes.func
-    }),
-};
 
 export default MainHeader;

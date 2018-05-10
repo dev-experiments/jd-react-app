@@ -4,22 +4,28 @@ import './SearchPage.css';
 
 class SearchPageList extends Component {
     static defaultProps = {
-        list_items: [],
-        item_callback: () => { }
+        listItems: [],
+        itemLabelMap: { text: 'text', sub_text: 'sub_text' },
+        itemCallback: () => { }
     }
-   /*  constructor(props) {
+    static propTypes = {
+        itemLabelMap: PropTypes.object,
+        listItems: PropTypes.array,
+        itemCallback: PropTypes.func
+    }
+    /* constructor(props) {
         super(props);
-    } */
+    }  */
     itemClickHandle(item) {
-        if (this.props.item_callback) this.props.item_callback(item);
+        if (this.props.itemCallback) this.props.itemCallback(item);
     }
     list(list) {
         return list.map((item, index) =>
-            <li key={index} onClick={(e)=>{this.itemClickHandle(e)}}>
+            <li key={index} onClick={(e) => { this.itemClickHandle(e) }}>
                 <a>
                     <span className="adrswp">
-                        <span className="htlsrarea">{item.text}</span>
-                        <span className="htlsrcity">{item.sub_text}</span>
+                        <span className="htlsrarea">{item[this.props.itemLabelMap.text]}</span>
+                        <span className="htlsrcity">{item[this.props.itemLabelMap.sub_text]}</span>
                     </span>
                 </a>
             </li >
@@ -28,7 +34,7 @@ class SearchPageList extends Component {
     render() {
 
         return (
-            this.props.list_items.map((item, index) => {
+            this.props.listItems.map((item, index) => {
                 return (<div className="htlsrchdta" key={index} >
                     <span className="srchtitl" id="recent_srch">{item.title}</span>
                     <ul className="htlcitydta">
@@ -39,10 +45,5 @@ class SearchPageList extends Component {
         );
     }
 }
-
-SearchPageList.propTypes = {
-    list_items: PropTypes.array.isRequired,
-    item_callback: PropTypes.func
-};
 
 export default SearchPageList;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './HotelsMainPage.css';
 import Header from './headers/Header';
-import SearchMainForm from './search/SearchMainForm';
-import SearchFilter from './search/SearchFilter';
+import SearchFormPage from './search/SearchFormPage';
 // import SearchSkull from './components/search/SearchSkull';
 // import SearchForm from './components/search/SearchSkull';
 
@@ -15,16 +15,9 @@ class HotelsMainPage extends Component {
          super(props);
      } */
     render() {
-        let searchForm = <div> <Header /> <SearchMainForm /> </div>;
-        let filter = <SearchFilter title="Select your destination" />;
-        let currentView = searchForm;
-
-        if (this.props.current_view === 'search_filter') {
-            currentView = filter;
-        } 
         return (
             <div>
-                {currentView}
+                <Header /> <SearchFormPage />
             </div>
         );
     }
@@ -40,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
         showSearch: bindActionCreators(searchActions, dispatch).showSearch
     }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(HotelsMainPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HotelsMainPage));
