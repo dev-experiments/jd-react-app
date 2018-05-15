@@ -13,15 +13,16 @@ class SearchPageList extends Component {
         listItems: PropTypes.array,
         itemCallback: PropTypes.func
     }
-    /* constructor(props) {
+     constructor(props) {
         super(props);
-    }  */
+        this.itemClickHandle = this.itemClickHandle.bind(this);
+    }  
     itemClickHandle(item) {
         if (this.props.itemCallback) this.props.itemCallback(item);
     }
     list(list) {
         return list.map((item, index) =>
-            <li key={index} onClick={(e) => { this.itemClickHandle(e) }}>
+            <li key={index} onClick={this.itemClickHandle}>
                 <a>
                     <span className="adrswp">
                         <span className="htlsrarea">{item[this.props.itemLabelMap.text]}</span>

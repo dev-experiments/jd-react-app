@@ -8,6 +8,13 @@ class SearchService {
       method: 'POST'
     });
   }
+  destinationSearch(data) {
+    return Http({
+      url: `/hotels/destinationSearch/`,
+      method: 'POST',
+      data: data
+    });
+  }
 
 }
 

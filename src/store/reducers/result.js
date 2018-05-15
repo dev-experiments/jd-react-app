@@ -1,4 +1,4 @@
-import { FETCH_HOTELS } from "../actions/actionTypes";
+/* import { FETCH_HOTELS } from "../actions/actionTypes";
 
 export default result;
 export const initialState = { destination: {}, queryDates: {} };
@@ -14,4 +14,4 @@ function fetchHotels(state, expense) {
     return { 
       ...state
     } 
-  } 
+  }  */
