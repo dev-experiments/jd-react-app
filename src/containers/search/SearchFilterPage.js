@@ -6,6 +6,7 @@ import * as searchActions from './../../store/actions/search';
 
 import SearchPage from './../../JdLibs/wap/UI/pages/SearchPage';
 import MainHeader from './../../JdLibs/wap/UI/headers/MainHeader';
+import { Delay } from './../../shared/utils/Misc';
 
 class SearchFilterPage extends Component {
 
@@ -22,17 +23,14 @@ class SearchFilterPage extends Component {
         return {
             placeholder: ph || 'Enter City or Hotel Name',
             searchItemCallback: () => { alert('search item called') },
-            searchItemLabels: sil || { text: 'ctyName', sub_text: 'country' },
-            searchKeyUpCallback: (e) => { this.destinationSearchHandle(e) },
+            searchItemLabels: sil || { text: 'city', sub_text: 'country' },
+            searchInputChangeCallback: (e) => { this.destinationSearchHandle(e) },
             clearSearchInputCallback: (e) => { this.clearSearchInput(e) }
         };
     }
 
     componentDidMount() {
-        if (this.props.popular_cities.length < 1) {
-            this.props.getPopularCitiesAction();
-        }
-
+        this.props.getPopularCitiesAction();
     }
 
     headerOptions() {
@@ -49,18 +47,29 @@ class SearchFilterPage extends Component {
     }
 
     destinationSearchHandle(e) {
-        //alert(44);
+        // console.log(e.value);
         const data = {
             search: e.value,
             city: 'delhi',
             country: 'India'
         };
-        this.setState(() => {
-            return { searchOptions: this.searchOptions('', { text: 'value', sub_text: 'areaname' }) }
-        });
-        this.props.destinationSearchAction(data);
+        if (e.value) {
+            Delay(() => {
+                this.setState(() => {
+                    return { searchOptions: this.searchOptions('', { text: 'text', sub_text: 'sub_text' }) }
+                });
+                this.props.destinationSearchAction(data);
+            }, 700);
+        } else {
+            this.resetSearchResult();
+        }
+
     }
+
     clearSearchInput(e) {
+       this.resetSearchResult();
+    }
+    resetSearchResult(e) {
         this.setState(() => {
             return { searchOptions: this.searchOptions() }
         });

@@ -3,15 +3,15 @@ import Http from './../utils/Http';
 class SearchService {
 
   getPopularCities() {
-    return Http({
+    return Http.post({
       url: `/hotels/getPopularCities/`,
-      method: 'POST'
     });
   }
   destinationSearch(data) {
-    return Http({
+    Http.cancel();
+
+    return Http.post({
       url: `/hotels/destinationSearch/`,
-      method: 'POST',
       data: data
     });
   }
@@ -19,6 +19,7 @@ class SearchService {
 }
 
 export default (new SearchService());
+
 /*
 import React from 'react'
 import MessageService from 'services/api/message'

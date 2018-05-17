@@ -22,7 +22,7 @@ function search(state = initialState, action = {}) {
         case TYPES.POPULAR_CITIES_RESPONSE:
             return setPopularCities(state, action.payload);
         case TYPES.POPULAR_CITIES_FAILURE:
-            return setPopularCities(state, action.payload);
+            return setPopularCities(state, action.error);
         case TYPES.RESET_DESTINATION_TO:
             return resetDestinationTo(state, action.payload);
 
@@ -31,7 +31,7 @@ function search(state = initialState, action = {}) {
         case TYPES.DESTINATION_SEARCH_RESPONSE:
             return setDestinationSearch(state, action.payload);
         case TYPES.DESTINATION_SEARCH_FAILURE:
-            return setDestinationSearch(state, action.payload);
+            return setDestinationSearch(state, action.error);
         default: return state;
     }
 }
@@ -43,7 +43,6 @@ function getPopularCities(state, payload) {
 }
 
 function setPopularCities(state, payload) {
-
     return {
         ...state, popular_cities: payload.data, destination_results: payload.data
     }
@@ -55,8 +54,8 @@ function getDestinationSearch(state, payload) {
     }
 }
 function setDestinationSearch(state, payload) {
-    const data =[{
-        items:payload.data
+    const data = [{
+        items: payload.data
     }]
 
     return {

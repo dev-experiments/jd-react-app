@@ -11,7 +11,7 @@ class SearchPage extends Component {
         searchOptions: {
             placeholder: '',
             searchItemCallback: () => { },
-            searchKeyUpCallback: () => { },
+            searchInputChangeCallback: () => { },
             searchItemLabels: {},
             clearSearchInputCallback: () => { }
         }
@@ -20,7 +20,7 @@ class SearchPage extends Component {
         searchInput: PropTypes.string,
         searchOptions: PropTypes.shape({
             placeholder: PropTypes.string,
-            searchKeyUpCallback: PropTypes.func,
+            searchInputChangeCallback: PropTypes.func,
             clearSearchInputCallback: PropTypes.func,
         })
     }
@@ -32,13 +32,13 @@ class SearchPage extends Component {
         }
         this.searchInputOnChange = this.searchInputOnChange.bind(this);
         this.clearTextHandle = this.clearTextHandle.bind(this);
-        this.keyUpHandle = this.keyUpHandle.bind(this);
+        this.inputChangeHandle = this.inputChangeHandle.bind(this);
     }
 
-    keyUpHandle(e) {
+    inputChangeHandle(e) {
         this.setState({ searchInput: e.target.value });
-        if (this.props.searchOptions.searchKeyUpCallback) {
-            this.props.searchOptions.searchKeyUpCallback(e.target);
+        if (this.props.searchOptions.searchInputChangeCallback) {
+            this.props.searchOptions.searchInputChangeCallback(e.target);
         }
     }
     searchInputOnChange(e) {
@@ -53,7 +53,7 @@ class SearchPage extends Component {
     render() {
         const search = <div className="srchhtl">
             <span className="icon-search"></span>
-            <input value={this.state.searchInput} name="searchInput" type="text" onChange={this.searchInputOnChange} onKeyUp={this.keyUpHandle} placeholder={this.props.searchOptions.placeholder} autoComplete="off" />
+            <input value={this.state.searchInput} name="searchInput" type="text" onChange={this.searchInputOnChange} onKeyUp={this.inputChangeHandle} placeholder={this.props.searchOptions.placeholder} autoComplete="off" />
             <span className="cls_otr" onClick={this.clearTextHandle} >
                 <span className="icon-close"></span>
             </span>
