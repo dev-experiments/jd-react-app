@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as searchActions from './../../store/actions/search';
 
-import SearchPage from './../../JdLibs/wap/UI/pages/SearchPage';
+import SearchPage from './../../JdLibs/wap/UI/search-pages/SearchPage';
 import MainHeader from './../../JdLibs/wap/UI/headers/MainHeader';
 import { Delay } from './../../shared/utils/Misc';
 
