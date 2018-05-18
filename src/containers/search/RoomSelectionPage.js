@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+
+import RoomSelection from './../../components/search/RoomSelection';
+import MainHeader from './../../JdLibs/wap/UI/headers/MainHeader';
+
 class RoomSelectionPage extends Component {
-    /* constructor(props) {
+    constructor(props) {
         super(props);
-        
-    } */
-    
+        this.backButton = this.backButton.bind(this);
+    }
+    backButton() {
+        this.props.history.push('/');
+    }
+    headerOptions() {
+        return {
+            backCallback: () => this.backButton(),
+            rightLinkLabel: 'Close',
+            rightLinkCallback: () => this.backButton(),
+        };
+    }
+
     render() {
-        
+
         return (
-            <div>in RoomSelection </div>
+            <div>
+                <MainHeader title='Pick Travellers' options={this.headerOptions()} />
+                <RoomSelection />
+            </div>
         );
     }
 }

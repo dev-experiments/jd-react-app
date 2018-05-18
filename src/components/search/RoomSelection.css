@@ -1,0 +1,91 @@
+/* .pickgtrvls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    overflow-y: auto;
+    padding-top: 45px;
+    background: #f6f6f6;
+} */
+.largtxt {
+    float: left;
+    width: 100%;
+    background: #f6f6f6;
+    font-size: 16px;
+    font-weight: 500;
+    color: #909090;
+    line-height: 46px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.hpickrange {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.hlftlbl {
+    float: left;
+    font-size: 17px;
+    color: #222;
+}
+.hlftlbl .lftsublbl {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #909090;
+    font-weight: 400;
+    line-height: 24px;
+}
+.haddroom {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #007aff;
+    margin: 15px 0;
+    background: #fff;
+    font-size: 15px;
+}
+
+.hrgtlbl {
+    float: right;
+    font-size: 30px;
+}
+.htlright {
+    text-align: right;
+}
+.hrgtlbl .icon-decrease, .hrgtlbl .icon-increase {
+    float: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+.icon-decrease:before {
+    content: "\f011";
+    color: #909090;
+}
+
+.hrgtlbl .hnumtxt {
+    font-size: 16px;
+    color: #222;
+    float: left;
+    line-height: 32px;
+    padding: 0 10px;
+}
+.hrgtlbl .icon-decrease, .hrgtlbl .icon-increase {
+    float: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+.icon-increase:before {
+    content: "\f017";
+    color: #909090;
+}
