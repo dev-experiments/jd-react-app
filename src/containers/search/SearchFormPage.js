@@ -2,46 +2,28 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+// import { Redirect } from 'react-router';
 //import { bindActionCreators } from 'redux';
 //import * as searchActions from './../../store/actions/search';
 import SearchForm from './../../components/search/SearchForm';
 
 class SearchFormPage extends Component {
+
     constructor(props) {
         super(props);
-        this.state = {
-            redirectTo: ''
-        }
-        this.setDestinationHandle = this.setDestinationHandle.bind(this);
-        this.roomSelectionHandle = this.roomSelectionHandle.bind(this);
-        this.checkInHandle = this.checkInHandle.bind(this);
-        this.setCheckOuthandle = this.setCheckOuthandle.bind(this);
+        this.doSearchHandle = this.doSearchHandle.bind(this);
     }
-    setDestinationHandle(e) {
-        this.setState(() => {
-            return { redirectTo: 'search' }
-        });
+
+    doSearchHandle(e) {
+        this.props.history.push("/results/sdfdf1223");
     }
-    setCheckOuthandle(e) {
-        this.setState(() => {
-            return { redirectTo: 'calendar' }
-        });
-    }
-    checkInHandle(e) {
-        this.setState(() => {
-            return { redirectTo: 'calendar' }
-        });
-    }
-    roomSelectionHandle(e) {
-        this.setState(() => {
-            return { redirectTo: 'roomSelection' }
-        });
-    }
+
     render() {
         return (
-            <SearchForm destination={this.destination} checkIn={this.checkIn} checkOut={this.checkOut} roomSelection={this.roomSelection} />
+            <SearchForm destination={this.destination} checkIn={this.checkIn} checkOut={this.checkOut} doSearch={this.doSearchHandle} />
         );
     }
+
 }
 const mapStateToProps = (state, ownProps) => {
     return {

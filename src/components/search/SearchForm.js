@@ -53,7 +53,7 @@ class SearchForm extends Component {
                                 </span>
                             </span>
                         </Link>
-                        <button className="htlgrnbtn ripple" >Search</button>
+                        <button className="htlgrnbtn ripple" onClick={this.props.doSearch}>Search</button>
                     </div>
                 </div>
             </div>

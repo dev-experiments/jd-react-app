@@ -1,8 +1,11 @@
 import * as TYPES from "./../actions/searchActionTypes";
+import RoomClass from './../../classes/RoomClass.js';
+
+const roomDetails = new RoomClass();
+roomDetails.addAdult();
 
 export default search;
 export const initialState = {
-    current_view: 'search_form',
     popular_cities: [],
     checkin_date: {
         label: ''
@@ -10,9 +13,9 @@ export const initialState = {
     checkout_date: {
         label: ''
     },
-    room_details: [],
     destination_results: [],
-    destination: []
+    destination: [],
+    room_details: roomDetails
 };
 
 function search(state = initialState, action = {}) {
@@ -32,6 +35,9 @@ function search(state = initialState, action = {}) {
             return setDestinationSearch(state, action.payload);
         case TYPES.DESTINATION_SEARCH_FAILURE:
             return setDestinationSearch(state, action.error);
+
+        case TYPES.SET_ROOM_DETAILS:
+            return setRoomDetails(state, action.payload);
         default: return state;
     }
 }
@@ -65,6 +71,12 @@ function setDestinationSearch(state, payload) {
 function resetDestinationTo(state, payload) {
     return {
         ...state, destination_results: payload
+    }
+}
+
+function setRoomDetails(state, payload) {
+    return {
+        ...state, room_details: payload
     }
 }
 

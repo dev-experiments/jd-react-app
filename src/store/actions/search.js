@@ -68,3 +68,10 @@ export const resetDestinationToAction = payload => ((dispatch) => {
   });
 });
 
+export const setRoomDetails = payload => ((dispatch) => {
+  dispatch({
+    type: TYPES.SET_ROOM_DETAILS,
+    payload
+  });
+});
+
