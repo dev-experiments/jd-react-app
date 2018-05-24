@@ -15,7 +15,7 @@ class SearchFormPage extends Component {
     }
 
     doSearchHandle(e) {
-        this.props.history.push("/results/sdfdf1223");
+        this.props.history.push("/results/searchId123");
     }
 
     render() {
